@@ -103,6 +103,52 @@ B = sin(theta/2)
 v_rotated = cos(theta)v + sin(theta)(u x v) + (1-cos(theta))(v.u)u
 
 easier to do v_rotated = qvq^-1 for q = cos(theta/2) + sin(theta/2)u for u unit axis vector, but it is good to know this
+-----------------------------------------------------------
+
+jk = -kj = i
+ki = -ik = j
+ij = -ji = k
+
+a x b = [a0i+b0j+c0k] x [a1i+b1j+c1k]
+      = a0i x [a1i+b1j+c1k] = a0i x a1i + a0i x b1j + a0i x c1k
+      + b0j x [a1i+b1j+c1k] = b0j x a1i + b0j x b1j + b0j x c1k
+      + c0k x [a1i+b1j+c1k] = c0k x a1i + c0k x b1j + c0k x c1k
+      
+      = a0i x [a1i+b1j+c1k] =  a0b1k - a0c1j
+      + b0j x [a1i+b1j+c1k] = -b0a1k + b0c1i
+      + c0k x [a1i+b1j+c1k] =  c0a1j - c0b1i
+      
+      = (b0c1 - c0b1)i + (c0a1 - a0c1)j + (a0b1 - b0a1)k
+
+q = a0i + b0j + c0k
+l = a1i + b1j + c1k
+
+ql = (a0i + b0j + c0k)(a1i + b1j + c1k)
+   = a0i * (a1i + b1j + c1k) = -a0a1 + a0c1j + a0b1k
+   + b0j * (a1i + b1j + c1k) = -b0b1 + b0c1i - b0a1k
+   + c0k * (a1i + b1j + c1k) = -c0c1 - c0b1i + c0a1j
+
+= -(a0a1 + b0b1 + c0c1) + (b0c1 - c0b1)i + (a0c1 + c0a1)j + (a0b1 - b0a1)k
+  v1 fields x v2 fields                cross product from above
+  ^-------------------^   ^----------------------------------------------^
+         -q.l           +                       q x l
+
+------------------
+ql = -q.l + q x l
+lq = -q.l - q x l
+(ql+lq)/2 = -q.l
+-(ql+lq)/2 = q.l
+------------------
+ ql = -q.l + q x l
+-lq =  q.l + q x l
+ql-lq = 2q x l
+(ql-lq)/2 = q x l
+------------------
+a^2 = aa = -aa + a x a
+                ^-----^
+                 sin(theta) = 0 -> a x a = 0
+    = -a^2
+    = - ||a||^2
 ]#
 
 import std/strformat
