@@ -154,7 +154,7 @@ a^2 = aa = -aa + a x a
 import std/strformat
 import math
 
-type Quaternion* = ref object
+type Quaternion* = object
    a*: float64
    b*: float64
    c*: float64
